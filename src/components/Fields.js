@@ -65,8 +65,7 @@ export default function Fields(props) {
         <Select
           options={options}
           isMulti
-          // onChange={(el)=>handleHobbiesChange(el.value)}
-          onChange={(e)=>console.log(e.label,'value')}
+          onChange={(el)=>handleHobbiesChange(el)}
         />
         {console.log(formInfo,'formInfo')}
       </div>

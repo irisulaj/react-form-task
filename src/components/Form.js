@@ -9,6 +9,7 @@ export default function Form() {
   
   })
   const [emailErr,setEmailErr]=useState(false)
+  const [displayFieldValue,setDisplayFieldValue]=useState(false)
   const handleFieldsChange = (e) =>{
     setFormInfo({
       ...formInfo,
@@ -30,6 +31,9 @@ export default function Form() {
       setEmailErr(true)
       return;
     }
+    if(Object.keys(formInfo).length != 0){
+      setDisplayFieldValue(true)
+    }
    
   }
   return (
@@ -45,7 +49,7 @@ export default function Form() {
          
       </div>
       <div className="col-md-6">
-        2
+        {displayFieldValue ? JSON.stringify(formInfo,null,3) : null }
       </div>
     </div>
   )
